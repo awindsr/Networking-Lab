@@ -42,3 +42,16 @@ int main(){
     }
     return 0;
 }
+
+
+// 1.  **Initialization:** Get the bucket's `capacity`, `outflow_rate`, and the `number of packets` to process as input. Initialize the `current_buffer` to 0.
+
+// 2.  **Packet Input:** For each incoming packet, read its `packet_size`.
+
+// 3.  **Bucket Check:**
+//     *   If the `packet_size` can fit within the remaining space in the `current_buffer` (i.e., `packet_size <= bucket_capacity - current_buffer`), add the packet to the bucket, increasing `current_buffer`.
+//     *   Otherwise, calculate and report the number of `dropped_packets` due to overflow. Set the `current_buffer` to the `bucket_capacity` (as the bucket becomes full).
+
+// 4.  **Outflow:**  Reduce the `current_buffer` by the `outflow_rate`. If the `current_buffer` is less than the `outflow_rate`, empty the bucket (`current_buffer = 0`).
+
+// 5.  **Repeat:** Display the remaining packets in the buffer and decrement the `number of packets`. Repeat steps 2-4 until all packets are processed.
